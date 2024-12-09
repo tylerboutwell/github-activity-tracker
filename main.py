@@ -1,6 +1,8 @@
 import requests
 
-git_api = requests.get('https://api.github.com/users/tylerboutwell/events/public')
+github_user = input("Enter github username: ")
+
+git_api = requests.get(f'https://api.github.com/users/{github_user}/events/public')
 
 if git_api.status_code == 200:
     print("--Last five events--")
